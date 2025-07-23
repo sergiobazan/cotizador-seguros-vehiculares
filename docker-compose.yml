@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  json-server:
+    build:
+      context: ./json-server
+      dockerfile: Dockerfile
+    container_name: json-server
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./json-server/db.json:/app/db.json
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  catalogo-app:
+    build:
+      context: ./catalogo-app
+      dockerfile: Dockerfile
+    container_name: catalogo-app
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./catalogo-app:/app
+      - /app/node_modules
+    depends_on:
+      - json-server
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  cotizador-app:
+    build:
+      context: ./cotizador-app
+      dockerfile: Dockerfile
+    container_name: cotizador-app
+    ports:
+      - "4201:4201"
+    volumes:
+      - ./cotizador-app:/app
+      - /app/node_modules
+    depends_on:
+      - json-server
+    networks:
+      - app-network
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge
