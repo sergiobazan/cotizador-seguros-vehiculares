@@ -32,8 +32,8 @@ Este repositorio contiene tres servicios independientes:
    ```
 
 3. Acceder a las aplicaciones:
-   - Catálogo de Modelos:   http://localhost:4201  
-   - Cotizador de Seguros:  http://localhost:4202  
+   - Catálogo de Modelos:   http://localhost:4200  
+   - Cotizador de Seguros:  http://localhost:4201  
    - API Falsa (json-server): http://localhost:3000  
 
 ---
