@@ -1,0 +1,40 @@
+<mat-card>
+  <div class="header">
+    <h2>Modelos de vehiculos</h2>
+    <button mat-raised-button color="primary" (click)="add()">
+      + Agregar Modelo
+    </button>
+  </div>
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z2">
+    <ng-container matColumnDef="brand">
+      <th mat-header-cell *matHeaderCellDef>Marca</th>
+      <td mat-cell *matCellDef="let modelo">{{ modelo.brand }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="model">
+      <th mat-header-cell *matHeaderCellDef>Modelo</th>
+      <td mat-cell *matCellDef="let modelo">{{ modelo.model }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="year">
+      <th mat-header-cell *matHeaderCellDef>Año</th>
+      <td mat-cell *matCellDef="let modelo">{{ modelo.year }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>Acciones</th>
+      <td mat-cell *matCellDef="let modelo">
+        <button mat-icon-button color="accent" (click)="edit(modelo.id)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="remove(modelo.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="nameColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: nameColumns"></tr>
+  </table>
+</mat-card>

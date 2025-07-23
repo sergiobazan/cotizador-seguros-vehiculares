@@ -57,9 +57,11 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
+              "port": 4000,
               "buildTarget": "cotizador-app:build:production"
             },
             "development": {
+              "port": 4000,
               "buildTarget": "cotizador-app:build:development"
             }
           },

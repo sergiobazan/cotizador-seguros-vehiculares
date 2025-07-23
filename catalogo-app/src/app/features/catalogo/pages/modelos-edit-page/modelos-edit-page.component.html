@@ -1,0 +1,43 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title class="full-width">Editar Modelo</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="update()">
+      <input type="hidden" formControlName="id" />
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Marca</mat-label>
+        <input matInput formControlName="brand" />
+        <mat-error
+          *ngIf="form.get('brand')?.invalid && form.get('brand')?.touched"
+        >
+          La marca es requerida
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Modelo</mat-label>
+        <input matInput formControlName="model" />
+        <mat-error
+          *ngIf="form.get('model')?.invalid && form.get('model')?.touched"
+        >
+          El modelo es requerido
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Año</mat-label>
+        <input matInput formControlName="year" />
+        <mat-error
+          *ngIf="form.get('year')?.invalid && form.get('year')?.touched"
+        >
+          El año es requerido y debe ser mayor a 1990
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">Guardar</button>
+    </form>
+  </mat-card-content>
+</mat-card>
