@@ -1,0 +1,44 @@
+@for (quote of quotes; track quote) {
+<mat-card class="quote-result-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title class="title"
+      >Resumen de la cotización #{{ quote.id }}</mat-card-title
+    >
+    <mat-card-subtitle class="subtitle"
+      >A continuación, se detalla su prima estimada.</mat-card-subtitle
+    >
+  </mat-card-header>
+
+  <mat-divider></mat-divider>
+
+  <mat-card-content>
+    <div class="row">
+      <span class="label">Precio base:</span>
+      <span class="value">${{ quote.basePrice }}</span>
+    </div>
+
+    <div class="row">
+      <span class="label">Año del vehiculo:</span>
+      <span class="value">+${{ quote.adjustments.year }}</span>
+    </div>
+
+    <div class="row">
+      <span class="label">Tipo de uso:</span>
+      <span class="value">+${{ quote.adjustments.usage }}</span>
+    </div>
+
+    <div class="row">
+      <span class="label">Edad del conductor:</span>
+      <span class="value">+${{ quote.adjustments.age }}</span>
+    </div>
+
+    <mat-divider class="my-3"></mat-divider>
+
+    <div class="row total">
+      <span class="label">Precio Total:</span>
+      <span class="value">${{ quote.totalPremium }}</span>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+}

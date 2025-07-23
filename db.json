@@ -25,16 +25,82 @@
       "year": 2022
     },
     {
-      "id": "e407",
-      "brand": "Toyora",
+      "id": "2a05",
+      "brand": "Toyota",
       "model": "Yaris",
-      "year": "1999"
+      "year": "1990"
+    }
+  ],
+  "cotizador": [
+    {
+      "id": "653c",
+      "basePrice": 500,
+      "adjustments": {
+        "year": 150,
+        "usage": 300,
+        "age": 150
+      },
+      "totalPremium": 1100
     },
     {
-      "id": "73e3",
-      "brand": "Chevrolet",
-      "model": "Camaro",
-      "year": "2001"
+      "id": "9223",
+      "basePrice": 500,
+      "adjustments": {
+        "year": 150,
+        "usage": 100,
+        "age": 50
+      },
+      "totalPremium": 800
+    },
+    {
+      "id": "8722",
+      "basePrice": 500,
+      "adjustments": {
+        "year": 150,
+        "usage": 300,
+        "age": 50
+      },
+      "totalPremium": 1000
+    },
+    {
+      "id": "136d",
+      "basePrice": 500,
+      "adjustments": {
+        "year": 150,
+        "usage": 100,
+        "age": 50
+      },
+      "totalPremium": 800
+    },
+    {
+      "id": "5774",
+      "basePrice": 500,
+      "adjustments": {
+        "year": 150,
+        "usage": 200,
+        "age": 150
+      },
+      "totalPremium": 1000
+    },
+    {
+      "id": "8ab9",
+      "basePrice": 500,
+      "adjustments": {
+        "year": 150,
+        "usage": 100,
+        "age": 50
+      },
+      "totalPremium": 800
+    },
+    {
+      "id": "b2cc",
+      "basePrice": 500,
+      "adjustments": {
+        "year": 150,
+        "usage": 300,
+        "age": 50
+      },
+      "totalPremium": 1000
     }
   ]
 }

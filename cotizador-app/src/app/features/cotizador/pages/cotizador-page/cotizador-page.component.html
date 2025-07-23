@@ -1,0 +1,91 @@
+<button
+  mat-flat-button
+  color="primary"
+  (click)="goToLastQuotations()"
+  class="last-quotation-btn"
+>
+  Ultimas cotizaciones
+</button>
+
+<mat-card>
+  <mat-card-header class="full-width">
+    <mat-card-title>Cotizar </mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="quote()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Marca</mat-label>
+        <input matInput formControlName="brand" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Modelo</mat-label>
+        <input matInput formControlName="model" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Año</mat-label>
+        <input matInput formControlName="year" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Tipo de uso</mat-label>
+        <mat-select name="useType" formControlName="useType">
+          @for (useType of useTypes; track useType) {
+          <mat-option [value]="useType.value">
+            {{ useType.viewValue }}
+          </mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Edad del conductor</mat-label>
+        <input matInput formControlName="driversAge" />
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">Cotizar</button>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<mat-card *ngIf="quoteResult" class="quote-result-card" appearance="outlined">
+  <mat-card-header>
+    <mat-card-title class="title">Resumen de la cotización</mat-card-title>
+    <mat-card-subtitle class="subtitle"
+      >A continuación, se detalla su prima estimada.</mat-card-subtitle
+    >
+  </mat-card-header>
+
+  <mat-divider></mat-divider>
+
+  <mat-card-content>
+    <div class="row">
+      <span class="label">Precio base:</span>
+      <span class="value">${{ quoteResult.basePrice }}</span>
+    </div>
+
+    <div class="row">
+      <span class="label">Año del vehiculo:</span>
+      <span class="value">+${{ quoteResult.adjustments.year }}</span>
+    </div>
+
+    <div class="row">
+      <span class="label">Tipo de uso:</span>
+      <span class="value">+${{ quoteResult.adjustments.usage }}</span>
+    </div>
+
+    <div class="row">
+      <span class="label">Edad del conductor:</span>
+      <span class="value">+${{ quoteResult.adjustments.age }}</span>
+    </div>
+
+    <mat-divider class="my-3"></mat-divider>
+
+    <div class="row total">
+      <span class="label">Precio Total:</span>
+      <span class="value">${{ quoteResult.totalPremium }}</span>
+    </div>
+  </mat-card-content>
+</mat-card>

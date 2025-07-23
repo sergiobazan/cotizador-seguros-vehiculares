@@ -59,7 +59,7 @@ export class ModelosEditPageComponent implements OnInit {
 
   update() {
     if (this.form.valid) {
-      this.modelService.updateModel(this.form.value).subscribe((data) => {
+      this.modelService.updateModel(this.form.value).subscribe(() => {
         this.router.navigate(['/catalogo']);
       });
     }
