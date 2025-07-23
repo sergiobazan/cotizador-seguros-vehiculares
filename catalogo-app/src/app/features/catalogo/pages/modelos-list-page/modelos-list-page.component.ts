@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDividerModule } from '@angular/material/divider';
 import { Router } from '@angular/router';
 import { VehicleModel } from '../../models/VehicleModel';
 import { ModelsService } from '../../service/models.service';
@@ -16,6 +17,7 @@ import { ModelsService } from '../../service/models.service';
     CommonModule,
     MatTableModule,
     MatButtonModule,
+    MatDividerModule,
     MatIconModule,
     MatCardModule,
     MatPaginatorModule,
@@ -24,7 +26,7 @@ import { ModelsService } from '../../service/models.service';
   styleUrl: './modelos-list-page.component.css',
 })
 export class ModelosListPageComponent implements OnInit {
-  nameColumns = ['brand', 'model', 'year', 'actions'];
+  nameColumns = ['id', 'brand', 'model', 'year', 'actions'];
 
   dataSource: VehicleModel[] = [];
 

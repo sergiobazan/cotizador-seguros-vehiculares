@@ -1,3 +1,9 @@
+.modelos-card {
+  padding: 24px;
+  max-width: 1020px;
+  margin: 16px auto;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -5,6 +11,18 @@
   margin-bottom: 16px;
 }
 
-table {
+.modelos-table {
   width: 100%;
+  margin-top: 16px;
+}
+
+.table-row:hover {
+  background: #f0f4ff;
+  transition: background 0.2s;
+}
+
+td.mat-cell:last-child {
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
